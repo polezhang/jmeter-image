@@ -1,0 +1,33 @@
+name: Build Docker Image and Push
+
+on:
+  push:
+    branches:
+      - master
+      - v1*
+  create:
+    tag:
+      - "*"
+  pull_request:
+    branches:
+      - master
+      - v1*
+  
+  workflow_dispatch:
+  
+jobs:
+  build_push:
+    runs-on: ubuntu-latest
+    name: Build Docker Image and Push
+    steps:
+    - uses: actions/checkout@v2
+    - name: Inject slug/short variables
+      uses: rlespinasse/github-slug-action@v3.x
+    - name: Push to Docker Hub
+      uses: docker/build-push-action@v1
+      with:
+        username: metersphere
+        password: ${{ secrets.DOCKER_HUB_TOKEN }}
+        repository: metersphere/jmeter-master
+        path: jmeter-master
+        tags: ${{ env.GITHUB_REF_SLUG }}
