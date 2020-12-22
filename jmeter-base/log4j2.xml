@@ -31,7 +31,7 @@
             </PatternLayout>
         </GuiLogEvent>
         <Kafka name="Kafka" topic="${env:LOG_TOPIC}">
-            <PatternLayout pattern="${env:REPORT_ID} ${env:RESOURCE_ID} %date %message"/>
+            <PatternLayout pattern="${env:REPORT_ID} ${env:RESOURCE_ID} ${env:RESOURCE_INDEX} %date %message"/>
             <Property name="bootstrap.servers">${env:BOOTSTRAP_SERVERS}</Property>
         </Kafka>
     </Appenders>
