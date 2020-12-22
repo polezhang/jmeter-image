@@ -1,4 +1,5 @@
-FROM metersphere/jmeter-base:0.0.1
+ARG IMAGE_PREFIX=metersphere
+FROM ${MS_VERSION}/jmeter-base:latest
 LABEL maintainer="support@fit2cloud.com"
 
 EXPOSE 60000
