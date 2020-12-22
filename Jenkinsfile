@@ -17,8 +17,6 @@ pipeline {
                 sh "docker push ${IMAGE_FREFIX}/jmeter-base:latest"
             }
         }
-    }
-    stages {
         stage('Docker build & push') {
             steps {
                 sh "docker build --build-arg IMAGE_PREFIX=${IMAGE_FREFIX} -t ${IMAGE_NAME}:\${TAG_NAME:-\$BRANCH_NAME} ./jmeter-master/"
