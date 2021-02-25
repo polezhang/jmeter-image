@@ -42,5 +42,4 @@ ENV JMETER_HOME /opt/jmeter
 ENV PATH $PATH:$JMETER_HOME/bin:/usr/lib/jvm/java-1.8-openjdk/bin
 
 ADD log4j2.xml $JMETER_HOME/bin/log4j2.xml
-ADD jmeter $JMETER_HOME/bin/jmeter
 ADD jmeter.properties $JMETER_HOME/bin/jmeter.properties
