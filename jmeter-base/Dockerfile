@@ -35,8 +35,6 @@ RUN apk update && \
     rm -rf jmeter.backendlistener.kafka-${KAFKA_BACKEND_LISTENER_VERSION}.jar && \
     rm -rf jmeter-plugins-dubbo-${DUBBO_JMETER_PLUGIN_VERSION}-jar-with-dependencies.jar && \
     rm -rf /var/cache/apk/* && \
-    wget -O /usr/bin/tpl https://github.com/schneidexe/tpl/releases/download/v0.5.0/tpl-linux-amd64 && \
-    chmod +x /usr/bin/tpl && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo "$TZ" > /etc/timezone
 
 ENV JMETER_HOME /opt/jmeter
