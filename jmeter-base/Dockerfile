@@ -2,14 +2,14 @@ FROM alpine:latest
 LABEL maintainer="support@fit2cloud.com"
 
 ENV JMETER_VERSION "5.4.1"
-ENV KAFKA_BACKEND_LISTENER_VERSION "1.0.4"
+ENV KAFKA_BACKEND_LISTENER_VERSION "1.0.5"
 ENV DUBBO_JMETER_PLUGIN_VERSION "2.7.7"
 #定义时区参数
 ENV TZ=Asia/Shanghai
 
 RUN apk update && \
     apk upgrade && \
-    apk add --update openjdk11 wget tar bash && \
+    apk add --update openjdk11-jre wget tar bash && \
     wget https://mirrors.tuna.tsinghua.edu.cn/apache/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz && \
     wget https://jmeter-plugins.org/files/packages/jpgc-casutg-2.9.zip && \
     wget https://jmeter-plugins.org/files/packages/jpgc-tst-2.5.zip && \
@@ -38,7 +38,7 @@ RUN apk update && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo "$TZ" > /etc/timezone
 
 ENV JMETER_HOME /opt/jmeter
-ENV PATH $PATH:$JMETER_HOME/bin:/usr/lib/jvm/java-11-openjdk/bin
+ENV PATH $PATH:$JMETER_HOME/bin
 
 ADD log4j2.xml $JMETER_HOME/bin/log4j2.xml
 ADD jmeter.properties $JMETER_HOME/bin/jmeter.properties
