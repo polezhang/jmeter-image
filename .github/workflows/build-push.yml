@@ -25,16 +25,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Inject slug/short variables
       uses: rlespinasse/github-slug-action@v3.x
-    - name: Build Base 
-      uses: docker/build-push-action@v1
-      with:
-        username: metersphere
-        password: ${{ secrets.DOCKER_HUB_TOKEN }}
-        repository: metersphere/jmeter-base
-        path: jmeter-base
-        tags: latest
-
-    - name: Push to Docker Hub
+    - name: Build and Push to Docker Hub
       uses: docker/build-push-action@v1
       with:
         username: metersphere
