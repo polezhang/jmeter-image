@@ -11,7 +11,7 @@ ENV TZ=Asia/Shanghai
 
 RUN apk update && \
     apk upgrade && \
-    apk add --update openjdk11 wget tar bash && \
+    apk add --update openjdk8 wget tar bash && \
     wget https://mirrors.tuna.tsinghua.edu.cn/apache/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz && \
     wget https://jmeter-plugins.org/files/packages/jpgc-casutg-2.9.zip && \
     wget https://jmeter-plugins.org/files/packages/jpgc-tst-2.5.zip && \
