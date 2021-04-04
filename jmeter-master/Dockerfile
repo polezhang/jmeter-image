@@ -4,12 +4,13 @@ FROM alpine:3.13
 LABEL maintainer="support@fit2cloud.com"
 
 ENV JMETER_VERSION "5.4.1"
-ENV KAFKA_BACKEND_LISTENER_VERSION "1.0.5"
+ENV KAFKA_BACKEND_LISTENER_VERSION "1.0.4"
 ENV DUBBO_JMETER_PLUGIN_VERSION "2.7.7"
 #定义时区参数
 ENV TZ=Asia/Shanghai
 
-RUN apk update && \
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
+    apk update && \
     apk upgrade && \
     apk add --update openjdk11 wget tar bash && \
     wget https://mirrors.tuna.tsinghua.edu.cn/apache/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz && \
