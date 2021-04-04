@@ -9,6 +9,8 @@ ENV DUBBO_JMETER_PLUGIN_VERSION "2.7.7"
 #定义时区参数
 ENV TZ=Asia/Shanghai
 
+ADD sources.list /etc/apt/
+
 RUN apk update && \
     apk upgrade && \
     apk add --update openjdk8 wget tar bash && \
