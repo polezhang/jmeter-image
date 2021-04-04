@@ -44,7 +44,7 @@ ENV PATH $PATH:$JMETER_HOME/bin
 
 ADD log4j2.xml $JMETER_HOME/bin/log4j2.xml
 ADD jmeter.properties $JMETER_HOME/bin/jmeter.properties
-ADD jmeter-plugins-autostop-0.1.jar $JMETER_HOME/bin/jmeter-plugins-autostop-0.1.jar
+ADD jmeter-plugins-autostop-0.1.jar $JMETER_HOME/lib/ext/jmeter-plugins-autostop-0.1.jar
 
 EXPOSE 60000
 ENV SSL_DISABLED true
