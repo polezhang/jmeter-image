@@ -22,7 +22,6 @@ sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories &&
   mv ojdbc8.jar /opt/jmeter/lib/ext &&
   mv postgresql.jar /opt/jmeter/lib/ext &&
   mv mssql-jdbc.jar /opt/jmeter/lib/ext &&
-  mv jmeter-plugins-threadgroup-autostop.jar /opt/jmeter/lib/ext &&
   mv jython-standalone-2.7.2.jar /opt/jmeter/lib/ext &&
   rm -rf apache-jmeter-${JMETER_VERSION}.tgz &&
   rm -rf jpgc-casutg-2.9.zip &&
