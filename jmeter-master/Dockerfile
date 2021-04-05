@@ -11,6 +11,7 @@ ENV JMETER_HOME /opt/jmeter
 ENV PATH $PATH:$JMETER_HOME/bin
 ENV SSL_DISABLED true
 ENV TESTS_DIR /test
+ENV JAVA_VERSION "8"
 
 #定义时区参数
 ENV TZ=Asia/Shanghai
